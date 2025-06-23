@@ -1,0 +1,52 @@
+
+Quizuzu Frontend – Project Notes
+================================
+
+Project Overview:
+-----------------
+Quizuzu is a React-based quiz web app deployed via Vercel. This project is structured with a frontend built using Create React App (CRA) and is connected to a GitHub repository and Vercel for deployment.
+
+Hosting Stack:
+--------------
+- Domain: GoDaddy (quizuzu.com)
+- Frontend Hosting: Vercel
+- Code Repository: GitHub (https://github.com/Skitchen88/quizuzu-frontend)
+- Development Environment: VS Code (local)
+- Framework: React (CRA-based)
+
+Project Structure:
+------------------
+/quizuzu-frontend/
+├── public/
+├── src/
+│   ├── components/
+│   │   └── QuizCard.js
+│   │   └── QuizCard.css
+│   ├── data.js
+│   └── App.js
+├── .gitignore
+├── package.json
+├── README.md
+├── Project_Notes.txt  ← [THIS FILE]
+└── ...
+
+Development Log:
+----------------
+✔ Initialized with Create React App
+✔ Created GitHub repo: quizuzu-frontend
+✔ Linked repo to Vercel project and deployed successfully
+✔ Confirmed site loads at: https://quizuzu-frontend.vercel.app/
+✔ VS Code set up and running
+✔ Created first component: QuizCard (JS and CSS)
+✔ Data stored in `data.js` and mapped through in App.js
+
+To Do Next:
+-----------
+1. Build out additional components (Header, Footer, QuizPage, etc.)
+2. Add routing with React Router (Home, QuizPage, Results)
+3. Integrate quiz-taking logic and answer scoring
+4. Create a “Quizmos” chat/discussion area
+5. Add user login and buddy chat functionality (phase 2)
+6. Style with a consistent UI theme (use CSS modules or styled-components)
+7. Add metadata and OG tags for social sharing
+8. Optional: Backend API / database integration (MongoDB or Firebase)

@@ -1,20 +1,37 @@
+// src/App.js
 import React from 'react';
-import SearchBar from './components/SearchBar';
-import QuizOfTheWeek from './components/QuizOfTheWeek';
-import RecentQuizzes from './components/RecentQuizzes';
-import PopularQuizzes from './components/PopularQuizzes';
-import QuizmosBanner from './components/QuizmosBanner';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import HomePage from './pages/HomePage';
+import QuizPage from './pages/QuizPage';
+import QuizFeed from './pages/QuizFeed';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import Profile from './pages/Profile';         // ✅ Import Profile
+import QuizBuilder from './pages/QuizBuilder'; // ✅ Import QuizBuilder
+
+import { SearchProvider } from './context/SearchContext';
+import { UserProvider } from './context/UserContext';
+import TopBar from './components/TopBar';
 
 function App() {
   return (
-    <div style={{ padding: '2rem', fontFamily: 'sans-serif', maxWidth: '800px', margin: '0 auto' }}>
-      <h1>🧠 Quizuzu</h1>
-      <SearchBar />
-      <QuizOfTheWeek />
-      <RecentQuizzes />
-      <PopularQuizzes />
-      <QuizmosBanner />
-    </div>
+    <UserProvider>
+      <SearchProvider>
+        <Router>
+          <TopBar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/quiz/:quizNumber" element={<QuizPage />} />
+            <Route path="/quiz-feed" element={<QuizFeed />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/quiz-builder" element={<QuizBuilder />} /> {/* ✅ New route */}
+          </Routes>
+        </Router>
+      </SearchProvider>
+    </UserProvider>
   );
 }
 
